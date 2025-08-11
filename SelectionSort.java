@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class SelectionSort {
     
     // Selection sort method
@@ -36,7 +38,17 @@ public class SelectionSort {
     
     // Main method to test the selection sort
     public static void main(String[] args) {
-        int[] arr = {64, 34, 25, 12, 22, 11, 90};
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter the number of elements: ");
+        int n = scanner.nextInt();
+        
+        int[] arr = new int[n];
+        
+        System.out.println("Enter " + n + " elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextInt();
+        }
         
         System.out.println("Original array:");
         printArray(arr);
@@ -45,5 +57,7 @@ public class SelectionSort {
         
         System.out.println("Sorted array:");
         printArray(arr);
+        
+        scanner.close();
     }
 }
